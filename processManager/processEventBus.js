@@ -15,6 +15,7 @@ ProcessEventBus.prototype.taskDone = function(data) {
 ProcessEventBus.prototype.taskFaulted = function(data) {
     this.emit(processEvents.taskFaulted, data);
 };
+
 ProcessEventBus.prototype.processDone = function(data) {
     this.emit(processEvents.processDone, data);
 };

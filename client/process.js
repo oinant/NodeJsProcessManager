@@ -1,6 +1,6 @@
 var // infra & services
     Store = require("../../dal.js"),
-    // process infrastruture
+    // process infrastructure
     Processor = require("../processManager/processor.js"),
     // tasks 
     GetStoredActiveLinks = require("./tasks/getStoredActiveLinks.js"),
@@ -27,7 +27,8 @@ function Process() {
 
     this.execute = function() {
         console.log('new process');
-        var processor = new Processor(process, function(result){ console.log("process completed")});
+        var onProcessComplete = function(result){ console.log("process completed")};
+        var processor = new Processor(process, onProcessComplete);
         processor.execute();
     }
 };
